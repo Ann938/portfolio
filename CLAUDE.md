@@ -12,4 +12,4 @@
   Экраны сняты `scripts/shot-screens.mjs` (в research/screens), отобраны вручную. Живой сайт — только кнопкой «Открыть живой сайт».
 - Блог: `/blog`, `/blog/<id>` (`BlogViews.tsx`, палитра V1).
 - Проверка: `node scripts/shot.mjs <path> <out> [w h]` (в Git Bash — `MSYS_NO_PATHCONV=1`).
-- Публикация (только с согласия; репозиторий ещё не создан): `npm run deploy` → ann938.github.io/portfolio.
+- Публикация (опубликовано 17.11 с её согласия, репо Ann938/portfolio): `npm run deploy` → ann938.github.io/portfolio.
