@@ -92,17 +92,6 @@ export const cases: Case[] = [
     url: live("vitgrass"),
     color: "#5d8a3a",
   },
-  {
-    id: "forma",
-    title: "FORMA",
-    kind: "Механические часы",
-    year: "2026",
-    tags: ["Продукт", "Анимация"],
-    short: "Часы, которые хочется рассмотреть",
-    text: "Первый экран для бренда механических часов: крупный продукт, деликатная анимация и ничего лишнего.",
-    url: live("forma"),
-    color: "#b08d57",
-  },
 ];
 
 export type Post = {

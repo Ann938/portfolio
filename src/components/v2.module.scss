@@ -148,6 +148,13 @@
   .b1 { grid-column: span 5; }
   .b2 { grid-column: span 5; }
   .b3 { grid-column: span 7; }
+  .b4 { grid-column: 1 / -1; }
+  // последний кейс во всю ширину: скриншот слева, описание справа
+  @include desktop {
+    .b4 .case { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); grid-template-rows: 1fr auto; align-items: end; column-gap: u(32); padding-bottom: u(14); }
+    .b4 .browser { grid-row: 1 / 3; }
+    .b4 .caseText { padding-bottom: u(20); }
+  }
 }
 .case {
   display: grid;
@@ -265,7 +272,7 @@
   .star { width: u(18); height: u(18); }
   .secHead { flex-direction: column; align-items: start; gap: u(10); margin-bottom: u(20); h2 { font-size: u(44); letter-spacing: u(-1.6); } p { font-size: u(15); } }
   .work, .blog { padding-top: u(90); }
-  .bento { grid-template-columns: minmax(0, 1fr); gap: u(10); > li, .b0, .b1, .b2, .b3 { grid-column: auto; } }
+  .bento { grid-template-columns: minmax(0, 1fr); gap: u(10); > li, .b0, .b1, .b2, .b3, .b4 { grid-column: auto; } }
   .case { padding: u(10) u(10) u(20); border-radius: u(22); gap: u(14); }
   .caseInfo { padding-inline: u(8); b { font-size: u(22); } }
   .go { width: u(44); height: u(44); }

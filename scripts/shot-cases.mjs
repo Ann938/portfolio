@@ -1,6 +1,6 @@
 // Обложки кейсов: снимки опубликованных сайтов (ДВ и МВ): node scripts/shot-cases.mjs
 import { chromium } from "playwright";
-const sites = { temp: "temp-sneakers", yagodnik: "yagodnik", dobro: "dobro", orbita: "orbita-lamp", vitgrass: "vitgrass", forma: "forma" };
+const sites = { temp: "temp-sneakers", yagodnik: "yagodnik", dobro: "dobro", orbita: "orbita-lamp", vitgrass: "vitgrass" };
 const b = await chromium.launch({ executablePath: process.env.PW_CHROME });
 for (const [id, path] of Object.entries(sites)) {
   for (const [suf, vp] of [["", { width: 1440, height: 900 }], ["-m", { width: 390, height: 844 }]]) {
