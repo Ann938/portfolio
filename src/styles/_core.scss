@@ -1,0 +1,17 @@
+// Ядро стилей портфолио: масштаб и брейкпоинты. Подключается как @use "styles/core" as *;
+// ДВ — макет 1440 (контент 1312, поля 64). МВ (≤1023) — колонка 358 = экран − 2×16.
+@function u($n) {
+  @return calc(#{$n} * var(--u));
+}
+
+$content: 1312;
+$m-content: 358;
+
+@mixin mobile { @media (max-width: 1023px) { @content; } }
+@mixin desktop { @media (min-width: 1024px) { @content; } }
+
+@mixin container {
+  width: u($content);
+  margin-inline: auto;
+  @include mobile { width: u($m-content); }
+}
