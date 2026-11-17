@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cases, me, posts } from "@/content";
+import Behance from "./Behance";
 import s from "./v1.module.scss";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -41,7 +42,7 @@ export default function V1() {
     <div className={s.page}>
       <header className={s.header}>
         <a href={`${BASE}/`} className={s.logo}>
-          {me.name}<span>.</span>
+          {me.brand}<span>.</span>
         </a>
         <nav className={s.nav}>
           <a href="#work">Кейсы</a>
@@ -59,7 +60,7 @@ export default function V1() {
             <i /> Открыта к новым проектам
           </p>
           <h1 className={s.h1} data-reveal style={{ ["--d" as string]: 1 }}>
-            Делаю сайты, которые <em>запоминают</em> с&nbsp;первого экрана
+            Проектирую интерфейсы, которые <em>запоминают</em>
           </h1>
           <div className={s.heroFoot} data-reveal style={{ ["--d" as string]: 2 }}>
             <p className={s.role}>
@@ -106,6 +107,8 @@ export default function V1() {
             ))}
           </div>
         </section>
+
+        <Behance />
 
         <section id="about" className={s.about}>
           <p className={s.kicker}>Обо мне</p>
@@ -158,7 +161,7 @@ export default function V1() {
         </section>
       </main>
       <footer className={s.footer}>
-        <span>© 2026 {me.name}</span>
+        <span>© 2026 {me.brand}</span>
         <a href={me.insta} target="_blank" rel="noopener noreferrer">
           Instagram
         </a>

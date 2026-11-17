@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cases, me, posts } from "@/content";
+import Behance from "./Behance";
+import Video from "./Video";
 import s from "./v3.module.scss";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
@@ -67,7 +69,7 @@ export default function V3() {
         </header>
         <div className={s.heroMid}>
           <p className={s.claim}>
-            Делаю сайты,
+            Проектирую интерфейсы,
             <br />
             которые{" "}
             <span className={s.word} key={w}>
@@ -76,7 +78,7 @@ export default function V3() {
           </p>
           <p className={s.lead}>{me.lead}</p>
         </div>
-        <h1 className={s.name}>{me.name.toUpperCase()}</h1>
+        <h1 className={s.name}>{me.brand.toUpperCase()}</h1>
         {/* веер из трёх работ справа от имени */}
         <a href="#work" className={s.stack} aria-label="Смотреть кейсы">
           {cases.slice(0, 3).map((c) => (
@@ -112,13 +114,15 @@ export default function V3() {
                 </a>
               </div>
               <div className={s.devices}>
-                <img className={s.desk} src={img(c.id)} alt={`${c.title} — сайт на компьютере`} loading="lazy" />
-                <img className={s.phone} src={img(c.id, true)} alt={`${c.title} — сайт на телефоне`} loading="lazy" />
+                <Video className={s.desk} src={`${BASE}/cases/${c.id}/v-d.mp4`} poster={img(c.id)} label={`${c.title} — сайт на компьютере`} />
+                <Video className={s.phone} src={`${BASE}/cases/${c.id}/v-m.mp4`} poster={img(c.id, true)} label={`${c.title} — сайт на телефоне`} />
               </div>
             </article>
           ))}
         </div>
       </section>
+
+      <Behance wide />
 
       <section id="blog" className={s.blog}>
         <div className={s.blogHead}>
@@ -160,7 +164,7 @@ export default function V3() {
           </a>
         </div>
         <footer className={s.footer}>
-          <span>© 2026 {me.name}</span>
+          <span>© 2026 {me.brand}</span>
           <span>{me.role}</span>
         </footer>
       </section>

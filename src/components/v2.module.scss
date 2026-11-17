@@ -167,7 +167,7 @@
   @media (hover: hover) {
     &:hover {
       background: color-mix(in srgb, var(--c) 34%, var(--cell));
-      .browser img { transform: scale(1.04); }
+      .browser video { transform: scale(1.04); }
       .go { background: var(--accent); color: var(--bg); svg { transform: rotate(45deg); } }
     }
   }
@@ -177,7 +177,7 @@
   border-radius: u(18);
   overflow: hidden;
   background: #26262c;
-  img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform 0.9s var(--ease); }
+  img, video { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform 0.9s var(--ease); }
 }
 .bar {
   display: flex;

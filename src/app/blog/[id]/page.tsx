@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const p = posts.find((x) => x.id === id);
-  return p ? { title: `${p.title} — Аня`, description: p.lead.replace(/\u00a0/g, " ") } : {};
+  return p ? { title: `${p.title} — Anyart`, description: p.lead.replace(/\u00a0/g, " ") } : {};
 }
 
 // адрес читаем внутри Suspense — так страница работает и в разработке (cacheComponents), и в статической сборке

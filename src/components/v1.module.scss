@@ -150,8 +150,8 @@
 .services {
   grid-column: 2;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: u(32);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: u(28);
   margin-top: u(40);
   li { padding-top: u(20); border-top: u(1.5) solid var(--line); }
   span { font-family: var(--f-serif), serif; font-style: italic; color: var(--accent); font-size: u(20); }

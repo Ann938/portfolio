@@ -1,4 +1,6 @@
 import { cases, me, posts } from "@/content";
+import Behance from "./Behance";
+import Video from "./Video";
 import s from "./v2.module.scss";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -22,7 +24,7 @@ function Browser({ id, url }: { id: string; url: string }) {
         <i />
         <span>{url.replace("https://", "")}</span>
       </span>
-      <img src={img(id)} alt="" loading="lazy" />
+      <Video src={`${BASE}/cases/${id}/v-d.mp4`} poster={img(id)} />
     </span>
   );
 }
@@ -34,7 +36,7 @@ export default function V2() {
     <div className={s.page}>
       <header className={s.header}>
         <a href={`${BASE}/v2/`} className={s.logo}>
-          <b>А</b> {me.name}
+          <b>A</b> {me.brand}
         </a>
         <nav className={s.nav}>
           <a href="#work">Работы</a>
@@ -50,7 +52,7 @@ export default function V2() {
               <i /> {me.role}
             </p>
             <h1>
-              Сайты, которые <mark>запоминают</mark> с первого экрана
+              Интерфейсы и сайты, которые <mark>запоминают</mark>
             </h1>
           </div>
           <div className={`${s.cell} ${s.lead}`} data-reveal style={{ ["--d" as string]: 1 }}>
@@ -115,6 +117,8 @@ export default function V2() {
           </ul>
         </section>
 
+        <Behance />
+
         <section id="blog" className={s.blog}>
           <div className={s.secHead}>
             <h2>Блог</h2>
@@ -149,7 +153,7 @@ export default function V2() {
         </section>
       </main>
       <footer className={s.footer}>
-        <span>© 2026 {me.name}</span>
+        <span>© 2026 {me.brand}</span>
         <span>{me.role}</span>
       </footer>
     </div>

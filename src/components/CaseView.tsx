@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { cases, stories, type Case, type CaseStory } from "@/content";
 import s from "./case.module.scss";
+import Video from "./Video";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const shot = (id: string, f: string) => `${BASE}/cases/${id}/${f}.jpg`;
@@ -125,8 +126,8 @@ export default function CaseView({ c }: { c: Case }) {
             </a>
           </div>
           <div className={s.devices}>
-            <img className={s.desk} src={`${BASE}/cases/${c.id}.jpg`} alt={`${c.title}: первый экран`} />
-            <img className={s.phone} src={`${BASE}/cases/${c.id}-m.jpg`} alt={`${c.title}: первый экран на телефоне`} />
+            <Video className={s.desk} src={`${BASE}/cases/${c.id}/v-d.mp4`} poster={`${BASE}/cases/${c.id}.jpg`} label={`${c.title}: сайт в движении`} />
+            <Video className={s.phone} src={`${BASE}/cases/${c.id}/v-m.mp4`} poster={`${BASE}/cases/${c.id}-m.jpg`} label={`${c.title}: на телефоне`} />
           </div>
         </div>
       </section>

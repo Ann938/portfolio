@@ -1,0 +1,38 @@
+@use "styles/core" as *;
+
+// Цвета — от страницы варианта: текст currentColor, рамки и подписи — его полупрозрачные оттенки
+.wrap { @include container; padding-top: u(130); }
+.wide { width: auto; padding-inline: u(40); @include mobile { padding-inline: u(16); } }
+.head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: u(24);
+  margin-bottom: u(32);
+  h2 { font-size: u(44); line-height: 1; letter-spacing: u(-1.6); font-weight: 600; }
+  a { font-weight: 600; font-size: u(15); border-bottom: u(1.5) solid currentColor; padding-bottom: u(3); }
+}
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: u(20); }
+.card {
+  display: grid;
+  gap: u(8);
+  b { margin-top: u(10); font-size: u(20); font-weight: 700; letter-spacing: u(-0.3); }
+  @media (hover: hover) { &:hover img { transform: scale(1.05); } }
+}
+.img {
+  display: block;
+  border-radius: u(18);
+  overflow: hidden;
+  img { width: 100%; aspect-ratio: 808 / 632; object-fit: cover; transition: transform 0.8s var(--ease); }
+}
+.d { font-size: u(14); line-height: 1.45; opacity: 0.65; }
+.tags { display: flex; flex-wrap: wrap; gap: u(6); margin-top: u(4); i { font-style: normal; font-size: u(12); padding: u(5) u(10); border-radius: u(100); border: u(1) solid color-mix(in srgb, currentColor 25%, transparent); } }
+
+@include mobile {
+  .wrap { padding-top: u(80); }
+  .head { flex-direction: column; align-items: start; gap: u(10); margin-bottom: u(20); h2 { font-size: u(30); } }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: u(20) u(10); }
+  .card b { font-size: u(16); margin-top: u(6); }
+  .d { font-size: u(13); }
+  .img { border-radius: u(12); }
+}

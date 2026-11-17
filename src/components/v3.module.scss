@@ -35,7 +35,8 @@
 }
 .heroMid {
   display: flex;
-  align-items: end;
+  flex-direction: column;
+  align-items: start;
   justify-content: space-between;
   gap: u(40);
   margin-top: u(56);
@@ -52,21 +53,21 @@
 @keyframes pop { from { transform: translateY(40%) rotate(-4deg); opacity: 0; } }
 .lead { max-width: u(400); font-size: u(17); line-height: 1.5; opacity: 0.85; }
 .name {
-  margin: auto u(-12) u(-70);
+  margin: auto u(-8) u(-46);
   font-weight: 800;
-  font-size: u(470);
+  font-size: u(356);
   line-height: 0.82;
-  letter-spacing: u(-24);
+  letter-spacing: u(-16);
   white-space: nowrap;
 }
 
 // веер работ: при наведении карточки расходятся
 .stack {
   position: absolute;
-  right: u(64);
-  bottom: u(70);
-  width: u(440);
-  height: u(290);
+  right: u(90);
+  top: u(300);
+  width: u(400);
+  height: u(260);
   img {
     position: absolute;
     inset: 0;
@@ -236,11 +237,11 @@
   .hero { padding-inline: u(16); min-height: 0; padding-bottom: u(48); }
   .header { grid-template-columns: 1fr auto; height: u(64); font-size: u(14); nav { display: none; } }
   .heroMid { flex-direction: column; align-items: start; gap: u(16); margin-top: u(24); }
-  .stack { position: relative; right: auto; bottom: auto; width: u(250); height: u(160); margin: u(40) auto 0; order: 3; }
+  .stack { position: relative; right: auto; bottom: auto; top: auto; width: u(250); height: u(160); margin: u(40) auto 0; order: 3; }
   .claim { font-size: u(34); letter-spacing: u(-1.2); }
   .word { border-radius: u(10); padding: 0 u(8) u(2); }
   .lead { font-size: u(15); }
-  .name { font-size: u(168); letter-spacing: u(-8); margin: u(28) u(-4) 0; }
+  .name { font-size: u(88); letter-spacing: u(-4); margin: u(28) u(-2) 0; }
   .workHead { position: static; padding: u(70) u(16) u(20); h2 { font-size: u(36); } span { font-size: u(13); em { display: none; } } }
   .track { flex-direction: column; width: auto; height: auto; padding: 0 u(16); gap: u(12); }
   .panel { grid-template-columns: minmax(0, 1fr); gap: u(24); padding: u(22); border-radius: u(24); }

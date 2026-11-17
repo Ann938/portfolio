@@ -7,7 +7,7 @@ function Top({ back }: { back: { href: string; t: string } }) {
   return (
     <header className={s.header}>
       <a href={`${BASE}/`} className={s.logo}>
-        {me.name}
+        {me.brand}
         <span>.</span>
       </a>
       <a href={`${BASE}${back.href}`} className={s.back}>

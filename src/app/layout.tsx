@@ -8,8 +8,8 @@ const manrope = Manrope({ variable: "--f-sans", subsets: ["latin", "cyrillic"], 
 const unbounded = Unbounded({ variable: "--f-wide", subsets: ["latin", "cyrillic"], weight: ["400", "500", "600", "700"] });
 const tight = Inter_Tight({ variable: "--f-tight", subsets: ["latin", "cyrillic"], weight: ["400", "500", "600", "700", "800"] });
 
-const title = "Аня — веб-дизайнер";
-const description = "Портфолио: лендинги и промо-сайты с анимацией, UX и UI, блог о дизайне.";
+const title = "Anyart — Аня, UX/UI-дизайнер";
+const description = "Портфолио UX/UI-дизайнера: сайты, интерфейсы сервисов, дизайн-системы и блог о дизайне.";
 
 export const metadata: Metadata = {
   robots: process.env.PAGES_EXPORT === "1" ? { index: false, follow: false } : undefined,

@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const c = cases.find((x) => x.id === id);
-  return c ? { title: `${c.title} — кейс · Аня`, description: c.text.replace(/\u00a0/g, " ") } : {};
+  return c ? { title: `${c.title} — кейс · Anyart`, description: c.text.replace(/\u00a0/g, " ") } : {};
 }
 
 // адрес читаем внутри Suspense — так страница работает и в разработке (cacheComponents), и в статической сборке
