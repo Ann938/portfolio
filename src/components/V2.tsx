@@ -59,7 +59,7 @@ export default function V2() {
               Смотреть работы <Arrow />
             </a>
           </div>
-          <a href={first.url} target="_blank" rel="noopener noreferrer" className={`${s.cell} ${s.shot}`} data-reveal style={{ ["--d" as string]: 2 }}>
+          <a href={`${BASE}/work/${first.id}/?v=2`} className={`${s.cell} ${s.shot}`} data-reveal style={{ ["--d" as string]: 2 }}>
             <img src={img(first.id)} alt="" />
             <span className={s.shotLabel}>
               Свежий кейс · <b>{first.title}</b> <Arrow />
@@ -92,12 +92,12 @@ export default function V2() {
         <section id="work" className={s.work}>
           <div className={s.secHead}>
             <h2>Работы</h2>
-            <p>Каждый кейс открывается живым сайтом — можно полистать и потрогать.</p>
+            <p>Внутри каждого кейса — задача, решения и экраны на компьютере и телефоне.</p>
           </div>
           <ul className={s.bento}>
             {[first, ...rest].map((c, i) => (
               <li key={c.id} className={s[`b${i}`]} data-reveal style={{ ["--d" as string]: i % 3, ["--c" as string]: c.color }}>
-                <a href={c.url} target="_blank" rel="noopener noreferrer" className={s.case}>
+                <a href={`${BASE}/work/${c.id}/?v=2`} className={s.case}>
                   <Browser id={c.id} url={c.url} />
                   <span className={s.caseInfo}>
                     <span>

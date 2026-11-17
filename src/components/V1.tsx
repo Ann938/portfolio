@@ -80,7 +80,7 @@ export default function V1() {
           <ul className={s.list} onPointerLeave={() => setHover(null)}>
             {cases.map((c, i) => (
               <li key={c.id} data-reveal>
-                <a href={c.url} target="_blank" rel="noopener noreferrer" className={s.row} onPointerEnter={() => setHover(c.id)} data-dim={hover && hover !== c.id ? "" : undefined}>
+                <a href={`${BASE}/work/${c.id}/?v=1`} className={s.row} onPointerEnter={() => setHover(c.id)} data-dim={hover && hover !== c.id ? "" : undefined}>
                   <span className={s.num}>{String(i + 1).padStart(2, "0")}</span>
                   <span className={s.rowTitle}>{c.title}</span>
                   <span className={s.rowKind}>

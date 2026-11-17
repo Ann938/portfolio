@@ -1,0 +1,154 @@
+@use "styles/core" as *;
+
+// Страница кейса: первый экран в фирменном цвете проекта (--c), дальше — светлая бумага
+.page {
+  --ink: #15141b;
+  --paper: #f6f5f1;
+  --muted: color-mix(in srgb, var(--ink) 60%, transparent);
+  --line: color-mix(in srgb, var(--ink) 14%, transparent);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-tight), system-ui, sans-serif;
+}
+.h2 { font-weight: 800; font-size: u(72); line-height: 0.95; letter-spacing: u(-3); }
+
+// ---- первый экран ----
+.hero { background: var(--c); color: #fff; padding: 0 u(40) u(80); overflow: hidden; }
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: u(84);
+  font-weight: 600;
+  font-size: u(15);
+  a { padding: u(10) u(18); border-radius: u(100); background: rgba(255, 255, 255, 0.14); transition: background-color 0.3s; &:hover { background: rgba(255, 255, 255, 0.26); } }
+  span { opacity: 0.7; }
+}
+.heroIn { display: grid; grid-template-columns: u(470) minmax(0, 1fr); gap: u(60); align-items: center; margin-top: u(40); }
+.heroText { display: grid; justify-items: start; gap: u(18); }
+.kind { font-weight: 600; font-size: u(16); opacity: 0.85; }
+.heroText h1 { font-weight: 800; font-size: u(124); line-height: 0.88; letter-spacing: u(-6); }
+.lead { font-size: u(18); line-height: 1.55; opacity: 0.9; }
+.tags { display: flex; flex-wrap: wrap; gap: u(6); li { padding: u(7) u(12); border-radius: u(100); border: u(1) solid rgba(255, 255, 255, 0.45); font-size: u(13); font-weight: 500; } }
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: u(10);
+  margin-top: u(10);
+  height: u(58);
+  padding-inline: u(28);
+  border-radius: u(100);
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: u(16);
+  svg { width: u(18); height: u(18); transition: transform 0.4s var(--ease); }
+  &:hover svg { transform: rotate(45deg); }
+  &:active { transform: scale(0.97); }
+}
+.devices { position: relative; padding: u(20) u(70) u(40) 0; }
+.desk { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: u(18); box-shadow: 0 u(40) u(80) rgba(0, 0, 0, 0.35); }
+.phone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: u(190);
+  aspect-ratio: 390 / 844;
+  object-fit: cover;
+  object-position: top;
+  border-radius: u(28);
+  border: u(6) solid #111;
+  box-shadow: 0 u(30) u(60) rgba(0, 0, 0, 0.4);
+}
+
+// ---- задача / роль / результат ----
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: u(40);
+  padding: u(80) u(40);
+  border-bottom: u(1.5) solid var(--line);
+  span { font-size: u(13); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--c); filter: brightness(0.85); }
+  p { margin-top: u(14); font-size: u(21); line-height: 1.4; font-weight: 500; letter-spacing: u(-0.3); }
+}
+
+// ---- фишки: крупный экран и пояснение, через одну — зеркально ----
+.features { padding: u(120) u(40) 0; display: grid; gap: u(110); }
+.feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) u(400);
+  gap: u(64);
+  align-items: center;
+  &:nth-of-type(even) { grid-template-columns: u(400) minmax(0, 1fr); .screen { order: 2; } }
+}
+.screen {
+  padding: u(28);
+  border-radius: u(32);
+  background: color-mix(in srgb, var(--c) 16%, var(--paper));
+  img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; border-radius: u(14); box-shadow: 0 u(20) u(50) color-mix(in srgb, var(--ink) 18%, transparent); }
+}
+.fText {
+  b { font-weight: 800; font-size: u(20); color: var(--c); filter: brightness(0.85); }
+  h3 { margin-top: u(14); font-weight: 700; font-size: u(40); line-height: 1.02; letter-spacing: u(-1.4); }
+  p { margin-top: u(16); font-size: u(18); line-height: 1.6; color: var(--muted); }
+}
+
+// ---- мобильная версия ----
+.mobile {
+  display: grid;
+  grid-template-columns: u(380) minmax(0, 1fr);
+  gap: u(60);
+  align-items: center;
+  margin: u(140) u(40) 0;
+  padding: u(64);
+  border-radius: u(40);
+  background: var(--ink);
+  color: #fff;
+}
+.mobileText p { margin-top: u(20); font-size: u(18); line-height: 1.6; opacity: 0.75; }
+.phones {
+  display: flex;
+  justify-content: flex-end;
+  gap: u(28);
+  li:nth-child(2) { transform: translateY(u(-36)); }
+  img { width: u(230); aspect-ratio: 390 / 844; object-fit: cover; object-position: top; border-radius: u(30); border: u(6) solid #2a2a31; }
+}
+
+// ---- следующий кейс ----
+.next {
+  display: grid;
+  gap: u(8);
+  margin: u(140) u(40) u(40);
+  padding: u(56) u(56) u(64);
+  border-radius: u(40);
+  background: var(--n);
+  color: #fff;
+  span { font-weight: 600; font-size: u(15); opacity: 0.8; }
+  b { display: flex; align-items: center; gap: u(24); font-weight: 800; font-size: u(120); line-height: 0.95; letter-spacing: u(-5); }
+  svg { width: u(80); height: u(80); transition: transform 0.5s var(--ease); }
+  small { font-size: u(18); opacity: 0.85; }
+  &:hover svg { transform: rotate(45deg); }
+}
+
+// ---------- МВ ----------
+@include mobile {
+  .h2 { font-size: u(40); letter-spacing: u(-1.6); }
+  .hero { padding: 0 u(16) u(48); }
+  .top { height: u(64); font-size: u(14); a { padding: u(8) u(14); } }
+  .heroIn { grid-template-columns: minmax(0, 1fr); gap: u(36); margin-top: u(16); }
+  .heroText h1 { font-size: u(64); letter-spacing: u(-3); }
+  .lead { font-size: u(16); }
+  .live { width: 100%; justify-content: center; height: u(52); font-size: max(14px, #{u(15)}); }
+  .devices { padding: 0 u(40) u(36) 0; }
+  .desk { border-radius: u(10); }
+  .phone { width: u(100); border-width: u(4); border-radius: u(16); }
+  .facts { grid-template-columns: minmax(0, 1fr); gap: u(24); padding: u(48) u(16); p { font-size: u(17); margin-top: u(8); } }
+  .features { padding: u(64) u(16) 0; gap: u(56); }
+  .feature, .feature:nth-of-type(even) { grid-template-columns: minmax(0, 1fr); gap: u(20); .screen { order: 0; } }
+  .screen { padding: u(12); border-radius: u(20); img { border-radius: u(8); } }
+  .fText { h3 { font-size: u(26); letter-spacing: u(-0.8); margin-top: u(8); } p { font-size: u(16); margin-top: u(10); } }
+  .mobile { grid-template-columns: minmax(0, 1fr); gap: u(28); margin: u(72) u(16) 0; padding: u(28) u(20); border-radius: u(26); }
+  .mobileText p { font-size: u(16); }
+  .phones { justify-content: space-between; gap: u(8); li:nth-child(2) { transform: translateY(u(-16)); } img { width: 100%; border-width: u(3); border-radius: u(16); } li { flex: 1; } }
+  .next { margin: u(72) u(16) u(90); padding: u(28) u(22) u(32); border-radius: u(26); b { font-size: u(52); letter-spacing: u(-2); gap: u(12); } svg { width: u(40); height: u(40); } small { font-size: u(15); } }
+}

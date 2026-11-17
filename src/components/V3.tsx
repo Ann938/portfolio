@@ -107,8 +107,8 @@ export default function V3() {
                     <li key={t}>{t}</li>
                   ))}
                 </ul>
-                <a href={c.url} target="_blank" rel="noopener noreferrer" className={s.open}>
-                  Открыть сайт <Arrow />
+                <a href={`${BASE}/work/${c.id}/?v=3`} className={s.open}>
+                  Смотреть кейс <Arrow />
                 </a>
               </div>
               <div className={s.devices}>
