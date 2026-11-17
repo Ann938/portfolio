@@ -167,7 +167,7 @@
   @media (hover: hover) {
     &:hover {
       background: color-mix(in srgb, var(--c) 34%, var(--cell));
-      .browser video { transform: scale(1.04); }
+      .browser img { transform: scale(1.04); }
       .go { background: var(--accent); color: var(--bg); svg { transform: rotate(45deg); } }
     }
   }
