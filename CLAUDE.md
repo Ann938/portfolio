@@ -9,7 +9,8 @@
   `/v3` — V3 «Сцена» (синий, Inter Tight, кейсы едут по горизонтали — GSAP pin, только ДВ). `Switcher.tsx` — переключатель вариантов (убрать после выбора).
 - Кейсы открываются страницей `/work/<id>/?v=N` (`CaseView.tsx`, `case.module.scss`, тексты — `stories` в content.ts): цветной первый экран,
   задача/роль/результат, 4 фишки с экранами (`public/cases/<id>/f1…f4.jpg`), мобильные экраны (m1…m3), следующий кейс. `?v` — куда ведёт «Все работы».
-  Экраны сняты `scripts/shot-screens.mjs` (в research/screens), отобраны вручную. Живой сайт — только кнопкой «Открыть живой сайт».
+  Экраны сняты `scripts/shot-screens2.mjs` (частые кадры в research/screens2, отобраны вручную — без пустых половин). Секции «смена темы» (slider: t1/t2, tabs: t1…tN)
+  и «Другие страницы» (p*/pm*) — поля `themes`/`pages` в stories. Живой сайт — только кнопкой «Открыть живой сайт».
 - Блог: `/blog`, `/blog/<id>` (`BlogViews.tsx`, палитра V1).
 - Проверка: `node scripts/shot.mjs <path> <out> [w h]` (в Git Bash — `MSYS_NO_PATHCONV=1`).
 - Публикация (опубликовано 17.11 с её согласия, репо Ann938/portfolio): `npm run deploy` → ann938.github.io/portfolio.
